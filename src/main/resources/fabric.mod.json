@@ -1,29 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "quarkcore",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "QuarkCore",
+  "description": "A core mode for most of mods by UQuark",
   "authors": [
-    "Me!"
+    "UQuark"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/UQuark0/QuarkCore"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "me.uquark.quarkcore.QuarkCore"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "quarkcore.mixins.json"
   ],
 
   "depends": {
