@@ -1,6 +1,5 @@
 package me.uquark.quarkcore.block;
 
-import me.uquark.quarkcore.base.AbstractMod;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.item.BlockItem;
@@ -12,9 +11,9 @@ public abstract class AbstractHorizontalFacingBlock extends HorizontalFacingBloc
     public final Identifier id;
     public final BlockItem item;
 
-    protected AbstractHorizontalFacingBlock(AbstractMod mod, String name, FabricBlockSettings blockSettings, Item.Settings itemSettings) {
+    protected AbstractHorizontalFacingBlock(String modid, String name, FabricBlockSettings blockSettings, Item.Settings itemSettings) {
         super(blockSettings.build());
-        id = new Identifier(mod.modid, name);
+        id = new Identifier(modid, name);
         item = new BlockItem(this, itemSettings);
     }
 
