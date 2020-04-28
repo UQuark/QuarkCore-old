@@ -1,6 +1,5 @@
 package me.uquark.quarkcore;
 
-import me.uquark.quarkcore.potion.BrewingRecipeHelper;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.FabricLoader;
 import org.apache.logging.log4j.LogManager;

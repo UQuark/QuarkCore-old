@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 public class BrewingRecipeHelper {
     private static Method registerPotionRecipeMethod = null;
     private static Method registerPotionTypeMethod = null;
+    private static Method registerItemRecipeMethod = null;
 
     static {
         initialize();
@@ -30,6 +31,14 @@ public class BrewingRecipeHelper {
             "method_8080",
             Item.class
         );
+        registerItemRecipeMethod = ReflectionHelper.resolveMethod(
+            BrewingRecipeRegistry.class,
+            "registerItemRecipe",
+            "method_8071",
+            Item.class,
+            Item.class,
+            Item.class
+        );
     }
 
     public static boolean registerPotionRecipe(Potion input, Item item, Potion output) {
@@ -48,6 +57,17 @@ public class BrewingRecipeHelper {
             return false;
         try {
             registerPotionTypeMethod.invoke(null, item);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean registerItemRecipe(Item input, Item ingredient, Item output) {
+        if (registerItemRecipeMethod == null)
+            return false;
+        try {
+            registerItemRecipeMethod.invoke(null, input, ingredient, output);
             return true;
         } catch (Exception e) {
             return false;
