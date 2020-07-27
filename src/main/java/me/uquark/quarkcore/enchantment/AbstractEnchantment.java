@@ -11,8 +11,8 @@ import net.minecraft.util.registry.Registry;
 public class AbstractEnchantment extends Enchantment {
     public final Identifier id;
 
-    protected AbstractEnchantment(String modid, String name, Weight weight, EnchantmentTarget type, EquipmentSlot[] slotTypes) {
-        super(weight, type, slotTypes);
+    protected AbstractEnchantment(String modid, String name, Rarity rarity, EnchantmentTarget type, EquipmentSlot[] slotTypes) {
+        super(rarity, type, slotTypes);
         id = new Identifier(modid, name);
     }
 
