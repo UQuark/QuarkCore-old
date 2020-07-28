@@ -10,8 +10,10 @@ import java.sql.SQLException;
 public class QuarkCoreServer implements DedicatedServerModInitializer, ServerLifecycleEvents.ServerStopping {
     @Override
     public void onInitializeServer() {
+        ServerLifecycleEvents.SERVER_STOPPING.register(this);
         try {
             DatabaseProvider.startServer();
+            QuarkCore.LOGGER.info("QuarkCore DB Server started");
         } catch (SQLException e) {
             QuarkCore.LOGGER.warn("Failed to launch QuarkCore DB Server");
             e.printStackTrace();
@@ -21,5 +23,6 @@ public class QuarkCoreServer implements DedicatedServerModInitializer, ServerLif
     @Override
     public void onServerStopping(MinecraftServer minecraftServer) {
         DatabaseProvider.stopServer();
+        QuarkCore.LOGGER.info("QuarkCore DB Server stopped");
     }
 }
