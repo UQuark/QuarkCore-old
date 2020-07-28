@@ -34,5 +34,6 @@
   },
   "suggests": {
     "flamingo": "*"
-  }
+  },
+  "accessWidener" : "quarkcore.aw"
 }
